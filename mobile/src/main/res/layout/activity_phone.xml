@@ -10,10 +10,10 @@
         android:id="@+id/imgWear"
         android:layout_width="32sp"
         android:layout_height="32sp"
-        android:onClick="btnInfo"
         android:layout_below="@+id/txtWearStatus"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
+        android:onClick="btnInfo"
         android:scaleType="fitXY"
         android:src="@drawable/hr_off" />
 
@@ -56,8 +56,7 @@
         android:layout_marginBottom="11dp"
         android:gravity="center_vertical"
         android:text="HR: 00"
-        android:textColor="?android:attr/colorMultiSelectHighlight"
-        />
+        android:textColor="?android:attr/colorMultiSelectHighlight" />
 
     <TextView
         android:id="@+id/txtDIP"
@@ -70,8 +69,7 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#000000"
-         />
+        android:textColor="#000000" />
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -95,8 +93,7 @@
         android:text="UDP Destination:"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#000000"
-        />
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/txtGyro"
@@ -108,8 +105,7 @@
         android:layout_marginBottom="11dp"
         android:text="Gyro: XXX, YYY, ZZZ"
         android:textAlignment="center"
-        android:textColor="#000000"
-       />
+        android:textColor="#000000" />
 
     <TextView
         android:id="@+id/txtAcc"
@@ -120,10 +116,7 @@
         android:layout_marginBottom="13dp"
         android:text="Acc: XXX, YYY, ZZZ"
         android:textAlignment="center"
-        android:textColor="#000000"
-         />
-
-
+        android:textColor="#000000" />
 
 
 </RelativeLayout>

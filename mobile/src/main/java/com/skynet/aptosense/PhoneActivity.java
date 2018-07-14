@@ -3,7 +3,6 @@ package com.skynet.aptosense;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
@@ -32,6 +31,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class PhoneActivity extends Activity implements View.OnClickListener {
+    // Initialize views and components
     TextView txtHRate, txtGyro, txtAcc, txtWearStatus, txtDIP;
     ImageView imgWear;
     WearListenerService wearListenerService = new WearListenerService();
@@ -72,15 +72,10 @@ public class PhoneActivity extends Activity implements View.OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-
     }
 
     public void btnConfig(View view) {
-
-
-
-        //
-
+       // Query user for UDP port
         AlertDialog.Builder builderUDP = new AlertDialog.Builder(this);
         builderUDP.setTitle("Enter the target UDP address");
 
@@ -95,7 +90,7 @@ public class PhoneActivity extends Activity implements View.OnClickListener {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 UDP_SERVER_PORT = Integer.parseInt(inputUDP.getText().toString());
-                txtDIP.setText(String.valueOf(ipAddress) + ":" + String.valueOf(UDP_SERVER_PORT) );
+                txtDIP.setText(String.valueOf(ipAddress) + ":" + String.valueOf(UDP_SERVER_PORT));
             }
         });
         builderUDP.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -107,7 +102,7 @@ public class PhoneActivity extends Activity implements View.OnClickListener {
 
         builderUDP.show();
 
-        //
+        // Query user for IP Address
         AlertDialog.Builder builderIP = new AlertDialog.Builder(this);
         builderIP.setTitle("Enter the target IP address");
 
@@ -122,7 +117,7 @@ public class PhoneActivity extends Activity implements View.OnClickListener {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ipAddress = inputIP.getText().toString();
-                txtDIP.setText(String.valueOf(ipAddress) + ":" + String.valueOf(UDP_SERVER_PORT) );
+                txtDIP.setText(String.valueOf(ipAddress) + ":" + String.valueOf(UDP_SERVER_PORT));
             }
         });
         builderIP.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -145,9 +140,9 @@ public class PhoneActivity extends Activity implements View.OnClickListener {
         Toast.makeText(getApplicationContext(), getString(R.string.android_system), Toast.LENGTH_LONG).show();
     }
 
-
-
-
+    ///////////////////////////////
+    //////// File Writer /////////
+    //////////////////////////////
 
     public void writeData(String wearData) {
 
@@ -191,7 +186,7 @@ public class PhoneActivity extends Activity implements View.OnClickListener {
         String timeStamp = new SimpleDateFormat("yyyy-MM-dd, HH:mm:ss.SSS").format(new Date());
 
 
-        String udpMsg =  wearData;
+        String udpMsg = wearData;
         Log.d("UDP Sent: ", "WEAR: " + wearData);
 
         DatagramSocket ds = null;
@@ -220,6 +215,9 @@ public class PhoneActivity extends Activity implements View.OnClickListener {
         }
     }
 
+    ///////////////////////////////
+    //////// Data Parser /////////
+    //////////////////////////////
 
     class ParseData extends TimerTask {
         @Override
