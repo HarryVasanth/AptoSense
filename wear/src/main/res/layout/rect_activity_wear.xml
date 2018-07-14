@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    tools:context="com.skynet.aptosense.WearActivity"
+    tools:deviceIds="wear_square"
+    android:textColor="#0FFF60" >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgHeart"
+        android:src="@drawable/ic_logo_green"
+        android:layout_marginTop="40dp"
+        android:layout_above="@+id/textHR"
+        android:layout_alignEnd="@+id/textHR"
+        android:layout_marginEnd="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textHR"
+        android:layout_marginStart="1dp" />
+    <TextView
+        android:id="@+id/textHR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnStop"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="@string/app_name"
+        android:textColor="#0FFF60" />
+
+    <Button
+        android:id="@+id/btnStop"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:onClick="StopHR"
+        android:text="STOP" />
+</RelativeLayout>

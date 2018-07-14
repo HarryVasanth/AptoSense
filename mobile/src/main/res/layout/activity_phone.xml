@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgWear"
+        android:layout_width="32sp"
+        android:layout_height="32sp"
+        android:onClick="btnInfo"
+        android:layout_below="@+id/txtWearStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/hr_off" />
+
+    <TextView
+        android:id="@+id/txtWearStatus"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:autoText="false"
+        android:gravity="center_vertical"
+        android:text="Disconnected"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000" />
+
+
+    <ImageView
+        android:id="@+id/imgExit"
+        android:layout_width="32sp"
+        android:layout_height="32sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/imgWear"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:clickable="true"
+        android:onClick="btnExit"
+        android:scaleType="fitXY"
+        android:src="@drawable/exit" />
+
+    <TextView
+        android:id="@+id/txtHRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtGyro"
+        android:layout_alignEnd="@+id/txtGyro"
+        android:layout_alignStart="@+id/txtDIP"
+        android:layout_marginBottom="11dp"
+        android:gravity="center_vertical"
+        android:text="HR: 00"
+        android:textColor="?android:attr/colorMultiSelectHighlight"
+        />
+
+    <TextView
+        android:id="@+id/txtDIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtHRate"
+        android:layout_alignEnd="@+id/txtGyro"
+        android:layout_alignStart="@+id/txtDIPLabel"
+        android:text="127.0.0.1:11111"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#000000"
+         />
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="32sp"
+        android:layout_height="32sp"
+        android:layout_below="@+id/txtAcc"
+
+        android:clickable="true"
+        android:longClickable="false"
+        android:onClick="btnConfig"
+        android:scaleType="fitXY"
+        android:src="@drawable/aptosense_plain" />
+
+    <TextView
+        android:id="@+id/txtDIPLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtDIP"
+        android:layout_alignEnd="@+id/txtGyro"
+        android:layout_alignStart="@+id/txtGyro"
+        android:text="UDP Destination:"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#000000"
+        />
+
+    <TextView
+        android:id="@+id/txtGyro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtAcc"
+        android:layout_alignStart="@+id/txtAcc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:text="Gyro: XXX, YYY, ZZZ"
+        android:textAlignment="center"
+        android:textColor="#000000"
+       />
+
+    <TextView
+        android:id="@+id/txtAcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imgExit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:text="Acc: XXX, YYY, ZZZ"
+        android:textAlignment="center"
+        android:textColor="#000000"
+         />
+
+
+
+
+</RelativeLayout>
