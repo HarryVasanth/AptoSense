@@ -5,7 +5,7 @@ on:
     branches: [master]
 
 jobs:
-  ga-misc-check-prettier:
+  prettify-code:
     runs-on: ubuntu-latest
 
     steps:
