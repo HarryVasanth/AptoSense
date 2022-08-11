@@ -18,5 +18,6 @@ jobs:
         uses: creyD/prettier_action@v4.2
         with:
           prettier_options: --write **/*.{js,md,java}
+          prettier_plugins: prettier-java
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
